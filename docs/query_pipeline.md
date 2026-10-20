@@ -18,7 +18,7 @@ SSE 事件在 PostgreSQL 有递增 sequence，Last-Event-ID 只回放较大序�
 MCP 默认关闭，并要求请求显式开启。当前 MCP 搜索仅调用管理员配置的 search 工具，不允许文档触发工具或提升内部权限；外部结果尚未纳入可验证答案。
 
 
-## 2026-10-12：jieba + BM25 关键词召回
+## jieba + BM25 关键词召回
 
 关键词通道改为 app/keyword.py 的应用内 Okapi BM25（正值 Robertson IDF，k1=1.2，b=0.75）。查询与正文统一使用 jieba 分词、大小写归一化、过滤纯标点；不要求所有查询词都匹配。按 chunk 计算词频与长度，按 BM25 分数取 Top-K，再沿用 RRF 和 reranker。
 
