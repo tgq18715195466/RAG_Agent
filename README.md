@@ -106,14 +106,6 @@ npm run build --prefix web
 # 第二个终端，在项目目录运行：
 $demo = Get-Content .runtime/demo.json | ConvertFrom-Json
 .\.venv\Scripts\python.exe -m app.worker --tenant $demo.tenant_id
-```
-
-- 工作台：<http://127.0.0.1:8000/>
-- OpenAPI：<http://127.0.0.1:8000/docs>
-- API 存活检查：<http://127.0.0.1:8000/health/live>
-- 数据库就绪检查：<http://127.0.0.1:8000/health/ready>（仅检查 PostgreSQL）
-
-本机已有模型的启动方式见 [依赖部署记录](docs/local_dependencies.md)。`compose.dependencies.yaml` 挂载本地模型权重，克隆仓库不会自动具备这些权重。
 
 ## 📁 项目结构
 
@@ -208,4 +200,3 @@ npm run build --prefix web
 - [运维与恢复](docs/operations.md) · [迁移指南](docs/migration_guide.md) · [评测说明](docs/evaluation.md)
 - [实施状态](docs/implementation_status.md) · [验证记录](docs/verification.md)
 
-章节组织参考 [FinanceWiki Agent](https://github.com/harrycjs/financewiki-agent)。技术与功能说明来自掌柜智库自身代码，不代表包含参考项目的记忆或技能系统。
